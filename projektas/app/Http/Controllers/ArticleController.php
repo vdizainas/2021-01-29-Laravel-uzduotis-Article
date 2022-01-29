@@ -16,7 +16,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::all();
+        return view('article.index', ['articles' => $articles]);
     }
 
     /**
@@ -46,7 +47,8 @@ class ArticleController extends Controller
         // $article->article_id = $request->article_id = 1;
         $article->save();
 
-        return 0;
+        // return 0;
+        return redirect()->route('article.index');
     }
 
     /**

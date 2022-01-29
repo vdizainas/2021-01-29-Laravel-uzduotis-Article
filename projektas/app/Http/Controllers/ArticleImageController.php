@@ -51,7 +51,8 @@ class ArticleImageController extends Controller
 
         $articleImage->save();
 
-        return 0;
+        // return 0;
+        return redirect()->route('articleimage.index');
     }
 
     /**
