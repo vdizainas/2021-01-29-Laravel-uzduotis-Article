@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ArticleCategory;
 use App\Http\Requests\StoreArticleCategoryRequest;
 use App\Http\Requests\UpdateArticleCategoryRequest;
+use Illuminate\Http\Request;
 
 class ArticleCategoryController extends Controller
 {
@@ -15,7 +16,8 @@ class ArticleCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $article_categories = ArticleCategory::all();
+        return view('article_category.index', ['article_categories' => $article_categories]);
     }
 
     /**
@@ -25,7 +27,7 @@ class ArticleCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('article_category.create');
     }
 
     /**
@@ -34,9 +36,16 @@ class ArticleCategoryController extends Controller
      * @param  \App\Http\Requests\StoreArticleCategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreArticleCategoryRequest $request)
+    public function store(Request $request)
     {
-        //
+        $articleCategory = new articleCategory;
+
+        $articleCategory->title = $request->articleCategory_title;
+        $articleCategory->description = $request->articleCategory_description;
+
+        $articleCategory->save();
+
+        return redirect()->route('articlecategory.index');
     }
 
     /**

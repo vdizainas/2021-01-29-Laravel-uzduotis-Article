@@ -9,7 +9,7 @@ class Article extends Model
 {
     use HasFactory;
 
-    // public function articleArticleImage() {
-    //     return $this->belongsTo(ArticleImage::class, 'article_id', 'id');
-    // }
+    public function articleArticleImage() {
+        return $this->belongsTo(ArticleImage::class, 'id', 'id');
+    }
 }
