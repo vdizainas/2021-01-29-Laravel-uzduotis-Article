@@ -4,5 +4,12 @@
 // Variables
 @import 'variables';
 
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Custom css. Cia taip vyksta scss failu sujungimas ta faila kuri nori prijungti jis pasivadina su apatiniu bruksniu _main.scss ir ji galima import
+
+@import 'main'; //rasosi tik pavadinimas be _ ir .scss
+
+//importas vyksta i app.scss nes laikomes vieno failo principo ir jis padaromas po to i app.css ir idedamas i projekta

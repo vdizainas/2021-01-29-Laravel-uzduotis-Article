@@ -16,7 +16,8 @@ class ArticleImageController extends Controller
      */
     public function index()
     {
-        //
+        $articleImages = ArticleImage::all();
+        return view('article_image.index', ['articleImages' => $articleImages]);
     }
 
     /**
@@ -42,10 +43,9 @@ class ArticleImageController extends Controller
         $articleImage->alt = $request->img_alt;
         $articleImage->width = $request->img_width;
         $articleImage->height = $request->img_height;
-        $articleImage->class = $request->img_height;
+        $articleImage->class = $request->img_class;
         
         $imgName = 'articleimg'.time().'.'.$request->img_src->extension();
-
         $request->img_src->move(public_path('uploads'), $imgName);
         $articleImage->src = $imgName;
 
