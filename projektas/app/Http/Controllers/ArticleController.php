@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
+use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
@@ -25,7 +26,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('article.create');
     }
 
     /**
@@ -34,9 +35,18 @@ class ArticleController extends Controller
      * @param  \App\Http\Requests\StoreArticleRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreArticleRequest $request)
+    public function store(Request $request)
     {
-        //
+        $article = new article;
+
+        $article->title = $request->article_title;
+        $article->excerpt = $request->article_excerpt;
+        $article->description = $request->article_description;
+        $article->author = $request->article_author;
+        // $article->article_id = $request->article_id = 1;
+        $article->save();
+
+        return 0;
     }
 
     /**

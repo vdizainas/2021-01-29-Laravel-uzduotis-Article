@@ -20,8 +20,8 @@ class CreateArticlesTable extends Migration
             $table->text('excerpt');
             $table->longtext('description');
             $table->text('author');
-            $table->unsignedBigInteger('article_id');
-            $table->foreign('article_id')->references('id')->on('article_images');
+            // $table->unsignedBigInteger('article_id');
+            // $table->foreign('article_id')->references('id')->on('article_images');
 
             $table->timestamps();
         });
