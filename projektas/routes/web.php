@@ -20,3 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('article_image')->group(function () {
+    Route::get('create', 'App\Http\Controllers\ArticleImageController@create')->name('articleimage.create');
+    Route::post('store', 'App\Http\Controllers\ArticleImageController@store')->name('articleimage.store');
+
+});
