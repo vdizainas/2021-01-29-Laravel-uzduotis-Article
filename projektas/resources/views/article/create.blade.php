@@ -27,11 +27,12 @@
                           <div class="col-12">
                             <label for="article_author" class="col-md-4 col-form-label">Author</label>
                             <input id="article_author" type="text" class="form-control" name="article_author" value="" required autofocus>      
-                          </div>                    
+                          </div>      
+                            {{-- <input id="image_id" type="text" class="form-control" name="image_id" value="1">                 --}}
                           {{-- <div class="col-12">
                             <label for="article_id" class="col-md-4 col-form-label">temp</label>
                             <input id="article_id" type="text" class="form-control" name="article_id" value="1" required autofocus>      
-                          </div>                     --}}
+                          </div> --}}
                       </div>
                 
                       <div class="row mb-0">

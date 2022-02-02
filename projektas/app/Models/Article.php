@@ -10,6 +10,10 @@ class Article extends Model
     use HasFactory;
 
     public function articleArticleImage() {
-        return $this->belongsTo(ArticleImage::class, 'id', 'id');
+        return $this->belongsTo(ArticleImage::class, 'image_id', 'id');
+    }
+
+    public function articleCategoryArticles() {
+        return $this->belongsTo(ArticleCategory::class, 'category_id', 'id');
     }
 }

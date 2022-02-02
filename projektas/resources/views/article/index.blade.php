@@ -12,6 +12,7 @@
               <th>Description</th>
               <th>Author</th>
               <th>img</th>
+              <th>Category</th>
             </tr>
             @foreach ($articles as $article)
               <tr>              
@@ -19,10 +20,18 @@
                   <td>{{$article->excerpt}}</td>
                   <td>{{$article->description}}</td>
                   <td>{{$article->author}}</td>                  
-                  <td><img src="/uploads/{{$article->articleArticleImage->src}}" width="100"/></td>                  
+                  {{-- <td><img src="/uploads/{{$article->articleArticleImage->src}}" width="100"/></td>                   --}}
+                  {{-- <td>{{$article->articleArticleCategory->title}}</td>                   --}}
               </tr>          
             @endforeach
           </table>
+          <div class="row mb-0">
+            <div class="col-md-12 mt-3 text-end">
+                <a href="{{route('article.create')}}" class="btn btn-primary px-5">
+                    Add article
+                </a>
+            </div>
+        </div>
       </div>
   </div>
 </div>
